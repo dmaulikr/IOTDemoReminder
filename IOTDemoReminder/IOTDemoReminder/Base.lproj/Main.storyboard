@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="IOTDemoReminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5FS-Jj-ZN2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderTaskTableViewCell" id="v9E-BB-nyk" customClass="ReminderTaskTableViewCell" customModule="IOTDemoReminder" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9E-BB-nyk" id="nHO-Jq-0Ja">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypM-Qf-e4r">
+                                                    <rect key="frame" x="42" y="8" width="550" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="beC-8z-Dlx"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA7-aN-Fuo">
+                                                    <rect key="frame" x="42" y="30" width="550" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JA7-aN-Fuo" firstAttribute="top" secondItem="ypM-Qf-e4r" secondAttribute="bottom" constant="1" id="G1i-Et-5hA"/>
+                                                <constraint firstItem="JA7-aN-Fuo" firstAttribute="leading" secondItem="nHO-Jq-0Ja" secondAttribute="leading" constant="42" id="I1t-ai-0JI"/>
+                                                <constraint firstAttribute="trailing" secondItem="ypM-Qf-e4r" secondAttribute="trailing" constant="8" id="PWn-bc-c0e"/>
+                                                <constraint firstAttribute="trailing" secondItem="JA7-aN-Fuo" secondAttribute="trailing" constant="8" id="UFL-zc-T1f"/>
+                                                <constraint firstItem="ypM-Qf-e4r" firstAttribute="leading" secondItem="nHO-Jq-0Ja" secondAttribute="leading" constant="42" id="bx4-yy-6TP"/>
+                                                <constraint firstAttribute="bottom" secondItem="JA7-aN-Fuo" secondAttribute="bottom" constant="8" id="xSi-Hr-iRT"/>
+                                                <constraint firstItem="ypM-Qf-e4r" firstAttribute="top" secondItem="nHO-Jq-0Ja" secondAttribute="top" constant="8" id="zRr-ed-4ds"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblReminderNote" destination="JA7-aN-Fuo" id="OYp-zh-lMh"/>
+                                            <outlet property="lblReminderTitle" destination="ypM-Qf-e4r" id="SeX-o6-Drf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Qi1-ao-9Ru"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="d2H-Fe-hhL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5FS-Jj-ZN2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="KnD-2K-oIX"/>
+                            <constraint firstAttribute="trailing" secondItem="5FS-Jj-ZN2" secondAttribute="trailing" id="RYp-jR-cmw"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5FS-Jj-ZN2" secondAttribute="bottom" id="bRK-OZ-Zsl"/>
+                            <constraint firstItem="5FS-Jj-ZN2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="jO9-d7-X5W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewListReminderTableView" destination="5FS-Jj-ZN2" id="JbN-LA-ZmS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
